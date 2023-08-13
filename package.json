@@ -1,0 +1,19 @@
+{
+  "name": "backendjp",
+  "version": "0.0.2",
+  "description": "Estudando ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Joniclei/backendJP.git"
+  },
+  "author": "Joniclei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joniclei/backendJP/issues"
+  },
+  "homepage": "https://github.com/Joniclei/backendJP#readme"
+}
