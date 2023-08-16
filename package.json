@@ -1,6 +1,7 @@
 {
   "name": "backendjp",
   "version": "0.0.2",
+  "type": "module",
   "description": "Estudando ",
   "main": "index.js",
   "scripts": {
