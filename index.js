@@ -1,26 +1,25 @@
 import express from "express";
 
-const app = express ();
+const app = express();
+
+import { somar } from './Exe/exe1.js'
+
+app.use(express.json());
+
+//. FUP que solicite dois numeros reais, realize a soma; Imprima o resultado;
+
+app.post("/api/exercicio1", (req,res) => {
+
+  const result = somar(req.body.numA, req.body.numB)
 
 
-
-/*1. FUP que solicite dois numeros reais, realize a soma; Imprima o resultado;
-
-app.get("/api/", (req,res) => {
-  const numA = parseFloat(req.query.numA);
-  const numB = parseFloat(req.query.numB);
-  const numC = numA + numB;
-
-  const nome = req.query.nome;
-  const pessoaID = req.params.id;
-
-  res.json({message: `A soma do valor de ${numA} e ${numB} = ${numC}`});
+  res.json({message: `Soma: ${result}`});
 
 
-})*/
+})
 
 
-/*2. FUP que leia o valor da hora do trabalhador e a quantidade de horas trabalhadas. Imprima o valor que o trabalhador deverá receber ao final do mês.;
+//. FUP que leia o valor da hora do trabalhador e a quantidade de horas trabalhadas. Imprima o valor que o trabalhador deverá receber ao final do mês.;
 
 
 app.get("/api/exercicio2", (req,res) => {
@@ -29,9 +28,9 @@ app.get("/api/exercicio2", (req,res) => {
   const receber = hora * vhora;
   res.json({message: `o valor da hora ${vhora} * a quantidade de hora ${hora} = ${receber}`})
 })
-*/
 
-/*3. FUP que solicite o peso de 5 pessoas e calcule a media; Imprima o resultado;
+
+//3. FUP que solicite o peso de 5 pessoas e calcule a media; Imprima o resultado;
 
 
 
@@ -45,9 +44,9 @@ app.get("/api/exercicio3", (req,res) =>{
   res.json({message:`media ${media}`});
 })
 
-*/
 
-/*4. Ler uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de conversão é : F = (9*C+160)/5 Sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.
+
+//4. Ler uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de conversão é : F = (9*C+160)/5 Sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.
 
 app.get("/api/exercicio4", (req,res) =>{
   const cels = parseFloat(req.query.cels);
@@ -55,17 +54,17 @@ app.get("/api/exercicio4", (req,res) =>{
   res.json({message:`fahrenheit = ${far}`});
 })
 
-*/
 
-/*
-5. FUP que solicite a quantidade de milhas e converta para quilometros (1milha = 1.60934kms);
+
+
+//5. FUP que solicite a quantidade de milhas e converta para quilometros (1milha = 1.60934kms);
 
 app.get("/api/exercicio5",(req,res) =>{
   const mi = parseFloat(req.query.mi);
   const resu = (mi * 1.60934);
   res.json({message:` Quilometros : ${resu}`});
 })
-*/
+
 
 app.listen (3000, ()=> {
   console.log ("Servidor rodando na porta 3000")
