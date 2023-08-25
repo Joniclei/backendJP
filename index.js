@@ -2,7 +2,9 @@ import express from "express";
 
 const app = express();
 
-import { somar } from './Exe/exe1.js'
+import { somar, receber,  mediaPeso} from './Exe/exe1a5.js';
+//import { receber } from './Exe/exe1a5.js';
+
 
 app.use(express.json());
 
@@ -22,16 +24,21 @@ app.post("/api/exercicio1", (req,res) => {
 //. FUP que leia o valor da hora do trabalhador e a quantidade de horas trabalhadas. Imprima o valor que o trabalhador deverá receber ao final do mês.;
 
 
-app.get("/api/exercicio2", (req,res) => {
-  const hora = parseFloat(req.query.hora);
-  const vhora = parseFloat(req.query.vhora);
-  const receber = hora * vhora;
-  res.json({message: `o valor da hora ${vhora} * a quantidade de hora ${hora} = ${receber}`})
+app.post("/api/exercicio2", (req,res) => {
+
+  const result = receber(req.body.hTrab, req.body.vHora)
+
+  res.json({message: `o valor da hora  ${result}`});
 })
 
 
 //3. FUP que solicite o peso de 5 pessoas e calcule a media; Imprima o resultado;
 
+app.post("/api/exercicio3", (req,res)=> {
+  const result = mediaPeso(req.body.p1, req.body.p2, req.body.p3, req.body.p4, req.body.p5)
+
+  res.json({message:`a media de peso ${result}`});
+})
 
 
 app.get("/api/exercicio3", (req,res) =>{
