@@ -3,6 +3,10 @@ export function somar (numaA, numB){
     return numaA + numB;
 }
 
+
+
+
+
 export function receber (hTrab, vHora){
 
     return (hTrab * vHora) ;
