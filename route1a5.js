@@ -1,4 +1,4 @@
-const { exe1, exe2, exe3 } = require('./Exe/exe1a5.js');
+const { exe1, exe2, exe3, exe4 } = require('./Exe/exe1a5.js');
 
 
 
@@ -31,6 +31,12 @@ app.post("/api/exercicio3", (req, res) => {
 
   res.json({ message: `a media de peso ${result}` });
 });
+
+app.post("/api/exercicio4", (req,res) =>{
+  const x = exe4(req.body.cel);
+
+  res.json({tranformation:` ${x}` });
+})
 
 }
 
