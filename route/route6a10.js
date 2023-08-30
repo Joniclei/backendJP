@@ -1,4 +1,4 @@
-const {exe6, exe7} = require ("../Exe/exe6a10");
+const {exe6, exe7, exe8} = require ("../Exe/exe6a10");
 
 function route6a10(app){
 
@@ -15,6 +15,12 @@ function route6a10(app){
     res.status(200).json({resultado:result})
   })
 
+  app.post("/api/exercicio8", (req, res)=>{
+    const result = exe8(req.body.tab);
+
+    res.status(200).json({resultado:result})
+
+  })
 
 
 }
