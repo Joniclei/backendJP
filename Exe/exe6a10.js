@@ -8,5 +8,12 @@ function exe6 (seg) {
     minutos: m,
     segundos: s
   }}
-
-module.exports = {exe6}
+function exe7 (km){
+  const m = km * 1000;
+  const cm = km * 100000
+  return {
+    metros : m,
+    centimetros: cm
+  }
+}
+module.exports = {exe6, exe7}
