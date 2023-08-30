@@ -1,11 +1,17 @@
 const express = require("express");
 
-const indexExe = require("./route1a5.js");
+const indexExeA = require("./route/route1a5");
+
+const indexExeB = require("./route/route6a10");
+
 
 const app = express();
 app.use(express.json());
 
-indexExe(app);
+
+indexExeA(app);
+
+indexExeB(app);
 
 
 

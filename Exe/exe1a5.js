@@ -15,17 +15,8 @@ function exe4 (cel){
   return f;
 }
 
-function exe5 (seg){
-  const s = seg % 60;
-  const m = (((seg - s) % 3600)/60);
-  const h = ((seg - m) - (m * 60))/3600;
-
-
-  return {
-    hora : h,
-    minutos: m,
-    segundos: s
-  }
+function exe5 (milhas){
+  return { km : 1.60934 * milhas}
 }
 
 
