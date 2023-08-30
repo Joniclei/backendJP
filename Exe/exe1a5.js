@@ -15,5 +15,18 @@ function exe4 (cel){
   return f;
 }
 
+function exe5 (seg){
+  const s = seg % 60;
+  const m = (((seg - s) % 3600)/60);
+  const h = ((seg - m) - (m * 60))/3600;
 
-module.exports = {exe1,exe2,exe3,exe4};
+
+  return {
+    hora : h,
+    minutos: m,
+    segundos: s
+  }
+}
+
+
+module.exports = {exe1, exe2, exe3, exe4, exe5};

@@ -1,4 +1,4 @@
-const { exe1, exe2, exe3, exe4 } = require('./Exe/exe1a5.js');
+const { exe1, exe2, exe3, exe4, exe5 } = require('./Exe/exe1a5.js');
 
 
 
@@ -37,6 +37,24 @@ app.post("/api/exercicio4", (req,res) =>{
 
   res.json({tranformation:` ${x}` });
 })
+
+app.post("/api/exercicio5", (req,res)=> {
+  const tempo = exe5(req.body.seg);
+
+  res.json({tempo: tempo});
+})
+
+function exe5 (seg){
+  const s = ((seg %3600)%60);
+  const m = ((seg - s) % 3600)/60;
+  const h = ((seg - m) - (m * 60))/3600;
+
+  return {
+    hora : h,
+    minutos: m,
+    segundos: s
+  }
+}
 
 }
 
