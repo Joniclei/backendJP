@@ -51,4 +51,14 @@ function exe9(n1, n2, n3) {
   };
 }
 
-module.exports = { exe6, exe7, exe8, exe9 };
+function exe10(sexo, h) {
+  let imc;
+  if (sexo == "M" || sexo == "m") {
+    imc = (72.7*h)-58;
+  }else{
+    imc = (62.1*h)-44.7
+  }
+  return imc;
+}
+
+module.exports = { exe6, exe7, exe8, exe9, exe10 };
