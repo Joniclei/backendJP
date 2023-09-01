@@ -29,11 +29,21 @@ function exe8(tab) {
     resultado  = tab * j;
     mul [i] = `${tab} X ${j} = ${resultado}`;
   }
-
-
   return {
     mul
   }
 }
+
+function exe9(n1,n2,n3){
+  const media = (n1+n2+n3)/3;
+  const mensagem = ""
+  if (media >= 7){
+    mensagem = "Aprovado";
+  }else if ()
+
+}
+
+
+
 
 module.exports = { exe6, exe7, exe8 };
