@@ -2,9 +2,14 @@ const { exe1, exe2, exe3, exe4, exe5 } = require("../Exe/exe1a5");
 
 function route1a5(app) {
   app.post("/api/exercicio1", (req, res) => {
-    const result = exe1(req.body.numA, req.body.numB);
+    try {   
+      const result = exe1(req.body.numA, req.body.numB);
+  
+      res.json({ message: `Soma: ${result}` });
 
-    res.json({ message: `Soma: ${result}` });
+    } catch (error) {
+      res.status(500).json(error.message)
+    }
   });
 
   //. FUP que leia o valor da hora do trabalhador e a quantidade de horas trabalhadas. Imprima o valor que o trabalhador deverá receber ao final do mês.;
