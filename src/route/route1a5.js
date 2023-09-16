@@ -1,3 +1,21 @@
+
+const express = require('express')
+const ControllerExercicio = require('../controllers/exercicio')
+
+const controller = new ControllerExercicio()
+const router = express.Router()
+router.post('/api/exercicio', controller.Somar)
+
+module.exports = router
+
+const express = require('express')
+const ControllerExe1a5 = require('../controllers/controllers1a5');
+const router1a5 = express.Router()
+router1a5.post('/api/exercicio1',ControllerExe1a5.)
+
+
+
+
 const { exe1, exe2, exe3, exe4, exe5 } = require("../Exe/exe1a5");
 
 function route1a5(app) {
