@@ -1,4 +1,26 @@
+// importa o modulo express para uso
+const express = require('express');
 
+// cria uma variavel para receber o modulo do controllers
+const Controller1a5 = require('../controllers/controllers1a5');
+
+//instanciando a classe Controller1a5
+const controller1a5 = new Controller1a5();
+
+
+//criantando um objeto de rota
+const router = express.Router();
+
+// aqui define uma rota Post,quando o servidor receber uma solicitacao POST para esse caminho que sera executada
+router.post('/api/exercici', controller1a5.Exe1);
+
+//exporta o objeto de rota
+module.exports = router;
+
+
+
+
+/*
 const express = require('express')
 const ControllerExercicio = require('../controllers/exercicio')
 
@@ -16,13 +38,13 @@ router1a5.post('/api/exercicio1',ControllerExe1a5.)
 
 
 
-const { exe1, exe2, exe3, exe4, exe5 } = require("../Exe/exe1a5");
+const ServicoExercicio1a5 = require("../Exe/exe1a5");
 
 function route1a5(app) {
   app.post("/api/exercicio1", (req, res) => {
-    try {   
+    try {
       const result = exe1(req.body.numA, req.body.numB);
-  
+
       res.json({ message: `Soma: ${result}` });
 
     } catch (error) {
@@ -40,29 +62,5 @@ function route1a5(app) {
 
   //3. FUP que solicite o peso de 5 pessoas e calcule a media; Imprima o resultado;
 
-  app.post("/api/exercicio3", (req, res) => {
-    const result = exe3(
-      req.body.p1,
-      req.body.p2,
-      req.body.p3,
-      req.body.p4,
-      req.body.p5
-    );
-
-    res.json({ message: `a media de peso ${result}` });
-  });
-
-  app.post("/api/exercicio4", (req, res) => {
-    const x = exe4(req.body.cel);
-
-    res.json({ tranformation: ` ${x}` });
-  });
-
-  app.post("/api/exercicio5", (req, res) => {
-    const km = exe5(req.body.milhas);
-
-    res.json(km);
-  });
-}
-
 module.exports = route1a5;
+*/
